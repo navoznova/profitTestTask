@@ -101,7 +101,7 @@
         for (let i = 0; i < allTags.length; i++) {
             currentTagsLength += getTagLength(i);
 
-            if (currentTagsLength > windowInnerWidth-tagsContainerLength) {
+            if (currentTagsLength > windowInnerWidth - tagsContainerLength) {
                 allTags[i].style.display = "none";
                 allTags[i - 1].lastElementChild.style.display = "none";
             }

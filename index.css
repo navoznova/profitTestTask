@@ -9,12 +9,12 @@
 
 .card__img {
     max-width: 45%;
+    
 }
 
 .image {
-    aspect-ratio: 4 / 3;
-
     height: 100%;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: center;
     border-radius: 8px 0 0 8px;
@@ -25,7 +25,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    padding: 16px 32px 16px 32px;
+    padding: 16px 32px 12px 32px;
 
     background: var(--white);
 }
@@ -45,6 +45,7 @@
 .wrap {
     display: flex;
     justify-content: space-between;
+    margin-top: 16px;
 }
 
 .card__ingredients {
@@ -94,7 +95,7 @@
 .card__location {
     display: flex;
     flex-direction: row;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
     gap: 3px;
 }
 
