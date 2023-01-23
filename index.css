@@ -94,6 +94,14 @@
     color: var(--grey-card-text);
 }
 
+.icon {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+
+    background-color: #BFC5CE;
+}
+
 .card__location {
     display: flex;
     flex-direction: row;
