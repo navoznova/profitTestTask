@@ -11,81 +11,106 @@
 
 <body>
     <div class="card">
-        <div class="card__img">
-            <img src="./assets/images/product image-min.png" alt="Food" class="image">
-        </div>
-
+        <img class="card__img" src="./assets/images/product image-min.png" alt="Food">
         <div class="card__info">
-            <div class="card__description">
-                Fruits and vegetables are packed with essential vitamins,
-                minerals, and nutrients that are essential for maintaining a healthy body and mind
-            </div>
-
-            <div class="wrap">
-                <div class="card__ingredients">
-                    Fruits and vegetables
+            <div class="card__content">
+                <div class="card__description">
+                    Fruits and vegetables are packed with essential vitamins,
+                    minerals, and nutrients that are essential for maintaining a healthy body and mind
                 </div>
-                <div class="card__price">
-                    $ 3.90
+                <div class="wrap">
+                    <div class="card__ingredients">
+                        Fruits and vegetables
+                    </div>
+                    <div class="card__price">
+                        $ 3.90
+                    </div>
                 </div>
-            </div>
-            <div class="card__tags">
-                <div class="card__tag">
-                    <div>Healthy food</div>
-                    <div class="icon"></div>
-                </div>
-                <div class="card__tag">
-                    <div>Fresh</div>
-                </div>
-                <div class="card__tag">
-                    <div>Healthy food</div>
-                    <div class="icon"></div>
-                </div>
-                <div class="card__tag">
-                    <div>Fresh</div>
-                    <div class="icon"></div>
-                </div>
-                <div class="card__tag">
-                    <div>Healthy food</div>
-                    <div class="icon"></div>
-                </div>
-                <div class="card__tag">
-                    <div>Fresh</div>
+                <div class="card__tags">
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Fresh</div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Fresh</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
                 </div>
             </div>
             <div class="card__location">
                 <svg class="card__location__icon">
-                    <use href="./assets/images/sprite.svg#location"></use>
+                    <use x="5" y="2" href="./assets/images/sprite.svg#location"></use>
                 </svg>
                 <div class="card__location__name">Newport Beach, CA, USA</div>
             </div>
         </div>
 
-    </div>
+        <script type="module">
+            const windowInnerWidth = window.innerWidth;
+            const minWith = 960;
 
-    <script type="module">
-        const windowInnerWidth = window.innerWidth;
-        const minWith = 960;
+            let allTags = document.querySelectorAll('.card__tag');
+            let tagsContainer = document.querySelector('.card__tags');
+            let tagsContainerLength = document.querySelector('.card__info').offsetWidth;
+            let currentTagsLength = 0;
 
-        let allTags = document.querySelectorAll('.card__tag');
-        let tagsContainer = document.querySelector('.card__tags');
-        let tagsContainerLength = document.querySelector('.card__info').offsetWidth;
-        let currentTagsLength = 0;
+            for (let i = 0; i < allTags.length; i++) {
+                currentTagsLength += getTagLength(i);
 
-        for (let i = 0; i < allTags.length; i++) {
-            currentTagsLength += getTagLength(i);
-
-            if (currentTagsLength > windowInnerWidth - tagsContainerLength) {
-                allTags[i].style.display = "none";
-                allTags[i - 1].lastElementChild.style.display = "none";
+                if (currentTagsLength > windowInnerWidth - tagsContainerLength) {
+                    allTags[i].style.display = "none";
+                    allTags[i - 1].lastElementChild.style.display = "none";
+                }
             }
-        }
 
-        function getTagLength(i) {
-            return allTags[i].offsetWidth;
-        }
+            function getTagLength(i) {
+                return allTags[i].offsetWidth;
+            }
 
-    </script>
+        </script>
 </body>
 
 </html>

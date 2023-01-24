@@ -3,6 +3,7 @@
     flex-direction: row;
     overflow: hidden;
 
+    height: auto;
     min-width: 960px;
     max-width: 1440px;
 
@@ -15,12 +16,7 @@
 
 .card__img {
     max-width: 45%;
-    
-}
-
-.image {
-    height: 100%;
-    /* aspect-ratio: 4 / 3; Не могу победить это свойство */
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     object-position: center;
 }
@@ -28,15 +24,20 @@
 .card__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
-    padding: 16px 32px 12px 32px;
+    padding: 16px 32px 16px 32px;
 
     background: var(--white);
 }
 
+.card__content{
+    flex: 1 0 auto;
+
+}
+
 .card__description {
     margin-top: 8px;
+    margin-bottom: 16px;
 
     font-weight: 400;
     font-size: 24px;
@@ -46,17 +47,17 @@
 }
 
 .wrap {
+    margin-bottom: 8px;
+
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    
 }
 
 .card__ingredients {
     font-weight: 700;
     font-size: 24px;
     line-height: 36px;
-
-    margin-right: 16px;
 
     color: var(--grey-card-text);
 
@@ -75,9 +76,10 @@
 .card__tags {
     display: flex;
     flex-wrap: nowrap;
+    overflow: hidden;
     gap: 12px;
 
-    margin-bottom: 11px;
+    margin-bottom: 16px;
 }
 
 .card__tag {
@@ -85,6 +87,7 @@
     flex-direction: row;
     align-items: center;
     gap: 12px;
+
     white-space: nowrap;
 
     font-weight: 400;
@@ -104,14 +107,18 @@
 
 .card__location {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 18px;
-    gap: 3px;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+
 }
 
 .card__location__name {
     width: 150px;
-	overflow: hidden;
+    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 
@@ -123,9 +130,6 @@
 }
 
 .card__location__icon {
-    margin-left: 5px;
-    margin-top: 2px;
-
     width: 24px;
     height: 24px;
 }
