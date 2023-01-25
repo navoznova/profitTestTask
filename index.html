@@ -29,59 +29,58 @@
                 <div class="card__tags">
                     <div class="card__tag">
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Fresh</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Healthy food</div>
-                        <div class="icon"></div>
                     </div>
                     <div class="card__tag">
+                        <div class="icon"></div>
                         <div>Last tag for debagging</div>
-                        <div class="icon"></div>
                     </div>
                 </div>
             </div>
@@ -92,40 +91,6 @@
                 <div class="card__location__name">Newport Beach, CA, USA</div>
             </div>
         </div>
-
-        <script type="module">
-
-            let allTags = document.querySelectorAll('.card__tag');
-            let parentContainerLength = document.querySelector('.card__content').offsetWidth;
-            let tagsContainer = document.querySelector('.card__content');
-            let containerRect = tagsContainer.getBoundingClientRect();
-            let tagsContainerLength = tagsContainer.offsetWidth;
-            let currentTagsLength = 0;
-
-            // Первый способ скрыть элемент 
-            for (let i = 0; i < allTags.length; i++) {
-                currentTagsLength += allTags[i].offsetWidth;
-
-                if (currentTagsLength > parentContainerLength) {
-                    allTags[i].style.display = "none";
-                    allTags[i - 1].style.display = "none";
-                    allTags[i - 2].lastElementChild.style.display = "none";
-                }
-            }
-
-            // Второй способ скрыть элемент
-            // function showHideTags() {
-            //     for (let i = 0; i < allTags.length; i++) {
-            //         let tag = allTags[i];
-            //         let rect = tag.getBoundingClientRect();
-            //         tagsContainer.offsetWidth
-            //         tag.style.display = containerRect.right - container.style.gap> rect.right
-            //             ? "flex"
-            //             : "none";
-            //     }
-            // }
-
-        </script>
 </body>
 
 </html>
