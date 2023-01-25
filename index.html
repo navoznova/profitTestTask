@@ -102,23 +102,15 @@
             let tagsContainerLength = tagsContainer.offsetWidth;
             let currentTagsLength = 0;
 
-            showHideTags();
-
             // Первый способ скрыть элемент 
-            function showHideTags() {
-                for (let i = 0; i <= allTags.length; i++) {
-                    currentTagsLength += getTagLength(i);
+            for (let i = 0; i <= allTags.length; i++) {
+                currentTagsLength += allTags[i].offsetWidth;
 
-                    if (currentTagsLength > parentContainerLength) {
-                        allTags[i].style.display = "none";
-                        allTags[i - 1].style.display = "none";
-                        allTags[i - 2].lastElementChild.style.display = "none";
-                    }
+                if (currentTagsLength > parentContainerLength) {
+                    allTags[i].style.display = "none";
+                    allTags[i - 1].style.display = "none";
+                    allTags[i - 2].lastElementChild.style.display = "none";
                 }
-            }
-
-            function getTagLength(i) {
-                return allTags[i].offsetWidth;
             }
 
             // Второй способ скрыть элемент
@@ -130,7 +122,6 @@
             //         tag.style.display = containerRect.right - container.style.gap> rect.right
             //             ? "flex"
             //             : "none";
-
             //     }
             // }
 
