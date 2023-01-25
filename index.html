@@ -15,12 +15,12 @@
         <div class="card__info">
             <div class="card__content">
                 <div class="card__description">
-                    Fruits and vegetables
+                    Fruits and vegetables are packed with essential vitamins,
+                    minerals, and nutrients that are essential for maintaining a healthy body and mind
                 </div>
                 <div class="wrap">
                     <div class="card__ingredients">
-                        Fruits and vegetables are packed with essential vitamins,
-                        minerals, and nutrients that are essential for maintaining a healthy body and mind
+                        Fruits and vegetables
                     </div>
                     <div class="card__price">
                         $ 3.90
@@ -32,9 +32,6 @@
                         <div class="icon"></div>
                     </div>
                     <div class="card__tag">
-                        <div>Fresh</div>
-                    </div>
-                    <div class="card__tag">
                         <div>Healthy food</div>
                         <div class="icon"></div>
                     </div>
@@ -83,7 +80,7 @@
                         <div class="icon"></div>
                     </div>
                     <div class="card__tag">
-                        <div>Healthy food</div>
+                        <div>Last tag for debagging</div>
                         <div class="icon"></div>
                     </div>
                 </div>
@@ -100,21 +97,43 @@
 
             let allTags = document.querySelectorAll('.card__tag');
             let parentContainerLength = document.querySelector('.card__content').offsetWidth;
-            let currentTagsLength = 0
+            let tagsContainer = document.querySelector('.card__content');
+            let containerRect = tagsContainer.getBoundingClientRect();
+            let tagsContainerLength = tagsContainer.offsetWidth;
+            let currentTagsLength = 0;
 
-            for (let i = 0; i < allTags.length; i++) {
-                currentTagsLength += getTagLength(i);
+            showHideTags();
 
-                if (currentTagsLength > parentContainerLength) {
-                    allTags[i].style.display = "none";
-                    allTags[i - 1].style.display = "none";
-                    allTags[i - 2].lastElementChild.style.display = "none";
+            // Первый способ скрыть элемент 
+            function showHideTags() {
+                for (let i = 0; i <= allTags.length; i++) {
+                    currentTagsLength += getTagLength(i);
+
+                    if (currentTagsLength > parentContainerLength) {
+                        allTags[i].style.display = "none";
+                        allTags[i - 1].style.display = "none";
+                        allTags[i - 2].lastElementChild.style.display = "none";
+                    }
                 }
             }
 
             function getTagLength(i) {
                 return allTags[i].offsetWidth;
             }
+
+            // Второй способ скрыть элемент
+            // function showHideTags() {
+            //     for (let i = 0; i < allTags.length; i++) {
+            //         let tag = allTags[i];
+            //         let rect = tag.getBoundingClientRect();
+            //         tagsContainer.offsetWidth
+            //         tag.style.display = containerRect.right - container.style.gap> rect.right
+            //             ? "flex"
+            //             : "none";
+
+            //     }
+            // }
+
         </script>
 </body>
 

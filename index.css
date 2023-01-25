@@ -34,7 +34,6 @@
 .card__content{
     flex: 1 0 auto;
     overflow: hidden;
-    text-overflow: ellipsis;
 
 }
 
