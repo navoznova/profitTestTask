@@ -15,12 +15,12 @@
         <div class="card__info">
             <div class="card__content">
                 <div class="card__description">
-                    Fruits and vegetables are packed with essential vitamins,
-                    minerals, and nutrients that are essential for maintaining a healthy body and mind
+                    Fruits and vegetables
                 </div>
                 <div class="wrap">
                     <div class="card__ingredients">
-                        Fruits and vegetables
+                        Fruits and vegetables are packed with essential vitamins,
+                        minerals, and nutrients that are essential for maintaining a healthy body and mind
                     </div>
                     <div class="card__price">
                         $ 3.90
@@ -78,6 +78,14 @@
                         <div>Healthy food</div>
                         <div class="icon"></div>
                     </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
+                    <div class="card__tag">
+                        <div>Healthy food</div>
+                        <div class="icon"></div>
+                    </div>
                 </div>
             </div>
             <div class="card__location">
@@ -89,27 +97,24 @@
         </div>
 
         <script type="module">
-            const windowInnerWidth = window.innerWidth;
-            const minWith = 960;
 
             let allTags = document.querySelectorAll('.card__tag');
-            let tagsContainer = document.querySelector('.card__tags');
-            let tagsContainerLength = document.querySelector('.card__info').offsetWidth;
-            let currentTagsLength = 0;
+            let parentContainerLength = document.querySelector('.card__content').offsetWidth;
+            let currentTagsLength = 0
 
             for (let i = 0; i < allTags.length; i++) {
                 currentTagsLength += getTagLength(i);
 
-                if (currentTagsLength > windowInnerWidth - tagsContainerLength) {
+                if (currentTagsLength > parentContainerLength) {
                     allTags[i].style.display = "none";
-                    allTags[i - 1].lastElementChild.style.display = "none";
+                    allTags[i - 1].style.display = "none";
+                    allTags[i - 2].lastElementChild.style.display = "none";
                 }
             }
 
             function getTagLength(i) {
                 return allTags[i].offsetWidth;
             }
-
         </script>
 </body>
 
